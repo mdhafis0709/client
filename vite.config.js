@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://8000.d7f6e50aa771d225f90f57cca61ba303.selfmade.codes',
+        target: 'https://server-925m.onrender.com',
         changeOrigin: true,
         secure: false
       }
