@@ -1,6 +1,6 @@
 import axios from 'axios';
 const api = axios.create({
-    baseURL: "https://8000.d7f6e50aa771d225f90f57cca61ba303.selfmade.codes/api/",
+    baseURL: "https://server-925m.onrender.com/api/",
     headers: {
         "Content-Type": "application/json",
         "x-labs-auth": "true"
