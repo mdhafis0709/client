@@ -9,7 +9,11 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/api': 'https://8000.d7f6e50aa771d225f90f57cca61ba303.selfmade.codes'
+      '/api': {
+        target: 'https://8000.d7f6e50aa771d225f90f57cca61ba303.selfmade.codes',
+        changeOrigin: true,
+        secure: false
+      }
     }
   }
 })
