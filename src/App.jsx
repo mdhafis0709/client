@@ -13,7 +13,7 @@ function Navbar() {
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
             <FiCode className="text-white text-sm" />
           </div>
-          <span className="text-gray-900 dark:text-white font-bold text-lg">DevProfile</span>
+          <span className="text-gray-900 dark:text-white font-bold text-lg">GidyProfile</span>
         </div>
         <motion.button
           whileHover={{ scale: 1.08 }}
