@@ -452,18 +452,3 @@ http://localhost:5173
 
 ---
 
-# 📊 Evaluation Focus
-
-This project demonstrates:
-
-* Clean and modular code structure
-* Proper system design and API architecture
-* Responsive UI design
-* AI-powered product innovation
-
----
-
-# 📜 License
-
-This project was developed for the **Gidy Full-Stack Technical Challenge (2026)**.
-
