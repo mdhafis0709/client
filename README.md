@@ -1,16 +1,85 @@
-# React + Vite
+# Gidy - Smart Developer Profile
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, AI-powered developer profile application featuring a persistent dark mode, interactive work timeline, and AI-generated bios.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Node.js**: v18 or higher
+- **Python**: v3.9 or higher
+- **MongoDB**: A running MongoDB instance (or Atlas URI)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Server Setup (FastAPI)
 
-## Expanding the ESLint configuration
+1.  **Navigate to the server directory**:
+    ```bash
+    cd server
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2.  **Create a virtual environment**:
+    ```bash
+    python -m venv env
+    ```
+
+3.  **Activate the virtual environment**:
+    - **Windows**: `.\env\Scripts\activate`
+    - **macOS/Linux**: `source env/bin/activate`
+
+4.  **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+5.  **Configure Environment Variables**:
+    Create a `.env` file in the `server` directory and add your credentials:
+    ```env
+    MONGODB_URL=your_mongodb_uri
+    GROQ_API_KEY=your_groq_api_key
+    DB_NAME=devprofile
+    ```
+
+6.  **Run the server**:
+    ```bash
+    python main.py
+    ```
+    The API will be available at `http://localhost:8000`.
+
+---
+
+## Client Setup (Vite + React)
+
+1.  **Navigate to the client directory**:
+    ```bash
+    cd client
+    ```
+
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3.  **Configure API for Localhost**:
+    To point the client to your local server, ensure `client/src/services/api.js` is set to use the local proxy or direct URL:
+    
+    In `client/src/services/api.js`:
+    ```javascript
+    const api = axios.create({
+        baseURL: 'http://localhost:8000/api',
+        // ... headers
+    });
+    ```
+    *(Note: For production/live, this is currently pointed to Render.)*
+
+4.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
+    The application will be available at `http://localhost:5173`.
+
+---
+
+## Project Structure
+
+- `/client`: React frontend built with Vite and Tailwind CSS.
+- `/server`: FastAPI backend with MongoDB (Motor) and Groq AI integration.
